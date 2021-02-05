@@ -1,15 +1,27 @@
 import * as React from "react";
-import { PostList, PostShow, PostCreate, PostEdit } from "./posts";
-import { CommentList, CommentShow, CommentCreate, CommentEdit } from "./comments";
+import { StudentList, StudentShow, StudentCreate, StudentEdit } from "./students";
+import { RecruitList, RecruitShow, RecruitCreate, RecruitEdit } from "./recruit";
+import { ClassList, ClassShow, ClassCreate, ClassEdit } from "./classes";
+import { TeacherList, TeacherShow, TeacherCreate, TeacherEdit } from "./teachers";
 import { Admin, Resource } from "react-admin";
 import {
   FirebaseDataProvider,
   FirebaseAuthProvider
 } from "react-admin-firebase";
-import CommentIcon from '@material-ui/icons/Comment';
 import CustomLoginPage from './CustomLoginPage';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import GroupIcon from '@material-ui/icons/Group';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 
-import { firebaseConfig as config } from './FIREBASE_CONFIG';
+const config = {
+  apiKey: "AIzaSyAxahgHG6LM7cC3krZGqEDW2HAUC9miBwU",
+  authDomain: "tsetserleg-e1f52.firebaseapp.com",
+  projectId: "tsetserleg-e1f52",
+  storageBucket: "tsetserleg-e1f52.appspot.com",
+  messagingSenderId: "459529530464",
+  appId: "1:459529530464:web:00f58d8dbc8cb06ea2a705"
+};
 
 const options = {
   logging: true,
@@ -22,24 +34,53 @@ class App extends React.Component {
   render() {
     return (
       <Admin
-        loginPage={CustomLoginPage} 
+        loginPage={CustomLoginPage}
         dataProvider={dataProvider}
         authProvider={authProvider}
       >
         <Resource
-          name="posts"
-          list={PostList}
-          show={PostShow}
-          create={PostCreate}
-          edit={PostEdit}
+          options={{
+            label: 'Сурагч'
+          }}
+          name="students"
+          icon={AccountBoxIcon}
+          list={StudentList}
+          show={StudentShow}
+          create={StudentCreate}
+          edit={StudentEdit}
         />
         <Resource
-          name="comments"
-          icon={CommentIcon}
-          list={CommentList}
-          show={CommentShow}
-          create={CommentCreate}
-          edit={CommentEdit}
+          options={{
+            label: 'Элсэгч'
+          }}
+          name="recruits"
+          icon={AccountCircleIcon}
+          list={RecruitList}
+          show={RecruitShow}
+          create={RecruitCreate}
+          edit={RecruitEdit}
+        />
+        <Resource
+          options={{
+            label: 'Анги'
+          }}
+          name="classes"
+          icon={GroupIcon}
+          list={ClassList}
+          show={ClassShow}
+          create={ClassCreate}
+          edit={ClassEdit}
+        />
+        <Resource
+          options={{
+            label: 'Багш'
+          }}
+          name="teachers"
+          icon={SupervisorAccountIcon}
+          list={TeacherList}
+          show={TeacherShow}
+          create={TeacherCreate}
+          edit={TeacherEdit}
         />
       </Admin>
     );
