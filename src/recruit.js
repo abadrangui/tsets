@@ -29,7 +29,6 @@ import {
   DateField,
   BooleanField,
 } from "react-admin";
-import RichTextInput from "ra-input-rich-text";
 
 const PostFilter = (props) => (
   <Filter {...props}>
@@ -38,7 +37,7 @@ const PostFilter = (props) => (
 );
 
 export const RecruitList = (props) => (
-  <List title="Элсэгч" {...props} filters={<PostFilter />}>
+  <List title="Элсэгч" {...props} exporter={false}>
     <Datagrid>
       <TextField label="Ургийн овог" source="urgiinowog" />
       <TextField label="Эцэг/эх-ийн нэр" source="etsegehiinner" />

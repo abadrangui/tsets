@@ -14,6 +14,8 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import GroupIcon from '@material-ui/icons/Group';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 
+import './App.css';
+
 const config = {
   apiKey: "AIzaSyAxahgHG6LM7cC3krZGqEDW2HAUC9miBwU",
   authDomain: "tsetserleg-e1f52.firebaseapp.com",

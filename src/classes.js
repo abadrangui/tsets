@@ -38,8 +38,9 @@ export const ClassList = (props) => (
       <ReferenceField label="Багш" source="teacherId" reference="teachers" >
         <TextField source="ner" />
       </ReferenceField>
-      <RichTextField label="Тайлбар" source="tailbar" />
-      <RichTextField source="body" />
+      <RichTextField label="Хичээл" source="tailbar" />
+      <TextField label="Тоо" source="too" />
+      {/* <RichTextField source="body" /> */}
       {/* <TextField source="createdate" />
       <TextField source="lastupdate" /> */}
       <ShowButton label="" />
@@ -56,7 +57,9 @@ export const ClassShow = (props) => (
       <ReferenceField label="Багш" source="teacherId" reference="teachers" >
         <TextField source="ner" />
       </ReferenceField>
-      <RichTextField label="Тайлбар" source="tailbar" />
+      <RichTextField label="Хичээл" source="tailbar" />
+      <TextField label="Тоо" source="too" />
+      <FileField label="Хуваарь" source="src" title="Хуваарь" />
       <DateField source="createdate" />
       <DateField source="lastupdate" />
     </SimpleShowLayout>
@@ -67,10 +70,11 @@ export const ClassCreate = (props) => (
   <Create title="Анги үүсгэх" {...props} >
     <SimpleForm redirect="list">
       <TextInput label="Нэр" source="name" />
-      <RichTextInput label="Тайлбар" source="tailbar" />
+      <RichTextInput label="Хичээл" source="tailbar" />
       <ReferenceInput source="teacherId" reference="teachers">
         <SelectInput label="Багш" optionText="ner" />
       </ReferenceInput>
+      <TextInput label="Тоо" source="too" />
       <FileInput source="file" label="Хуваарь" accept="image/*" >
         <FileField source="src" title="title" />
       </FileInput>
@@ -87,6 +91,7 @@ export const ClassEdit = (props) => (
         <SelectInput label="Багш" optionText="ner" />
       </ReferenceInput>
       <RichTextInput source="tailbar" />
+      <TextInput label="Тоо" source="too" />
       <FileInput source="file" label="Хуваарь" accept="image/*" >
         <FileField source="src" title="title" />
       </FileInput>
